@@ -20,7 +20,11 @@ public interface SystemCodeConstants {
      */
     Integer[] ACCOUNT = new Integer[]{120000, 129999};
     /**
-     * 会员模块
+     * 用户模块
      */
-    Integer[] MEMBER = new Integer[]{130000, 139999};
+    Integer[] USER = new Integer[]{130000, 139999};
+    /**
+     * 图形验证码模块
+     */
+    Integer[] CAPTCHA = new Integer[]{900000, 919999};
 }
