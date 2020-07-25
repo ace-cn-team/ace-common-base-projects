@@ -7,14 +7,14 @@
         <artifactId>ace-projects</artifactId>
         <version>1.0.0.3</version>
     </parent>
-    <version>1.0.0.0</version>
+    <version>1.0.0.1</version>
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.ace</groupId>
     <artifactId>ace-common-base-projects</artifactId>
     <packaging>pom</packaging>
 
     <properties>
-        <ace.fw.version>1.0-SNAPSHOT</ace.fw.version>
+        <ace.fw.version>1.0.0.6</ace.fw.version>
     </properties>
     <modules>
         <module>ace-common-base-define</module>
@@ -29,4 +29,33 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <build>
+        <plugins>
+            <!-- 统一更改版本  说明：http://www.lavecoral.me/archives/213.html -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <generateBackupPoms>false</generateBackupPoms>
+                </configuration>
+            </plugin>
+            <!-- 要将源码放上去，需要加入这个插件 -->
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
