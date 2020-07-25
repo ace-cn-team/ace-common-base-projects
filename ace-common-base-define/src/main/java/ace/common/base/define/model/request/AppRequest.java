@@ -10,5 +10,8 @@ import lombok.Data;
  */
 @Data
 public class AppRequest {
+    /**
+     * appId
+     */
     String appId;
 }

@@ -9,7 +9,15 @@ import lombok.Data;
  * @description 应用信息通用请求
  */
 public interface IAppRequest {
+    /**
+     * 获取appId
+     * @return
+     */
     String getAppId();
 
+    /**
+     * 设置appId
+     * @return
+     */
     String setAppId();
 }
