@@ -18,11 +18,18 @@ import javax.validation.constraints.NotNull;
  */
 @Data
 @Accessors(chain = true)
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-public class CommonAppRequest {
+public class CommonAppBizRequest implements IAppId {
     @Valid
     @NotNull(message = "请输入应用信息")
     private AppBiz appBiz;
+
+    @Override
+    public String getAppId() {
+        return appBiz.getAppId();
+    }
+
+    @Override
+    public void setAppId(String appId) {
+        appBiz.setAppId(appId);
+    }
 }
