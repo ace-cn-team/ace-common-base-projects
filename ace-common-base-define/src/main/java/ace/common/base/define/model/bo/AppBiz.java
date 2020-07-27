@@ -1,14 +1,14 @@
 package ace.common.base.define.model.bo;
 
+import ace.common.base.define.model.constraint.AppIdConstraint;
+import ace.common.base.define.model.constraint.BizIdConstraint;
+import ace.common.base.define.model.constraint.BizTypeConstraint;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-import org.hibernate.validator.constraints.Length;
-
-import javax.validation.constraints.NotBlank;
 
 /**
  * @author Caspar
@@ -18,25 +18,26 @@ import javax.validation.constraints.NotBlank;
  */
 @Data
 @Accessors(chain = true)
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class AppBiz {
     /**
      * appId
      */
-    @NotBlank(message = "请输入应用ID")
-    @Length(min = 1, max = 36, message = "请输入正确的应用ID")
+    @AppIdConstraint
+    @ApiModelProperty(value = "应用ID", required = true)
     private String appId;
     /**
      * bizType
      */
-    @NotBlank(message = "请输入业务类型")
-    @Length(min = 1, max = 36, message = "请输入正确的业务类型")
+    @BizTypeConstraint
     @ApiModelProperty(value = "业务类型", required = true)
     String bizType;
     /**
      * bizId
      */
-    @NotBlank(message = "请输入业务ID")
-    @Length(min = 1, max = 36, message = "请输入正确的业务ID")
+    @BizIdConstraint
     @ApiModelProperty(value = "业务ID", required = true)
     String bizId;
 }

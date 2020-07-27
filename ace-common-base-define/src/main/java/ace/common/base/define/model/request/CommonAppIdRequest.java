@@ -1,15 +1,13 @@
 package ace.common.base.define.model.request;
 
-import ace.common.base.define.model.bo.AppBizId;
 import ace.common.base.define.model.bo.IAppId;
+import ace.common.base.define.model.constraint.AppIdConstraint;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 /**
  * @author Caspar
@@ -22,18 +20,19 @@ import javax.validation.constraints.NotNull;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CommonAppBizIdRequest implements IAppId {
-    @Valid
-    @NotNull(message = "请输入应用信息")
-    private AppBizId appBizId;
+public class CommonAppIdRequest implements IAppId {
+    @ApiModelProperty(value = "应用ID", required = true)
+    @AppIdConstraint
+    private String appId;
 
     @Override
     public String getAppId() {
-        return appBizId.getAppId();
+        return appId;
     }
 
     @Override
     public void setAppId(String appId) {
-        appBizId.setAppId(appId);
+        this.appId = appId;
     }
+
 }

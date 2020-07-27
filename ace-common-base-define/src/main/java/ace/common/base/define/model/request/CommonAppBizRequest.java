@@ -1,6 +1,7 @@
 package ace.common.base.define.model.request;
 
 import ace.common.base.define.model.bo.AppBiz;
+import ace.common.base.define.model.bo.IAppId;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,6 +19,9 @@ import javax.validation.constraints.NotNull;
  */
 @Data
 @Accessors(chain = true)
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class CommonAppBizRequest implements IAppId {
     @Valid
     @NotNull(message = "请输入应用信息")

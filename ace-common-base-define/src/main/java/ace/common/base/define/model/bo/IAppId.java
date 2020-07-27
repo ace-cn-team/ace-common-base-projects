@@ -1,4 +1,4 @@
-package ace.common.base.define.model.request;
+package ace.common.base.define.model.bo;
 
 /**
  * @author Caspar
@@ -7,6 +7,7 @@ package ace.common.base.define.model.request;
  * @description
  */
 public interface IAppId {
+
     String getAppId();
 
     void setAppId(String appId);
