@@ -24,6 +24,10 @@ public interface SystemCodeConstants {
      */
     Integer[] USER = new Integer[]{130000, 139999};
     /**
+     * 统一认证模块
+     */
+    Integer[] CAS = new Integer[]{140000, 149999};
+    /**
      * 图形验证码模块
      */
     Integer[] CAPTCHA = new Integer[]{900000, 919999};
