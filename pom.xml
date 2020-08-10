@@ -7,7 +7,7 @@
         <artifactId>ace-projects</artifactId>
         <version>1.0.0.3</version>
     </parent>
-    <version>1.0.0.8</version>
+    <version>1.0.0.11</version>
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.ace</groupId>
     <artifactId>ace-common-base-projects</artifactId>
