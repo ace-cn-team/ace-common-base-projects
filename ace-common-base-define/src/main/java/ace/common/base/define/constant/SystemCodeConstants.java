@@ -32,7 +32,7 @@ public interface SystemCodeConstants {
      */
     Integer[] CAPTCHA = new Integer[]{900000, 919999};
     /**
-     * 文件上传模块
+     * OSS文件存储模块
      */
-    Integer[] UPLOAD = new Integer[]{920000, 929999};
+    Integer[] OSS = new Integer[]{920000, 929999};
 }
