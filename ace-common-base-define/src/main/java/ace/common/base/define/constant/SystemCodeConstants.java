@@ -31,4 +31,8 @@ public interface SystemCodeConstants {
      * 图形验证码模块
      */
     Integer[] CAPTCHA = new Integer[]{900000, 919999};
+    /**
+     * 文件上传模块
+     */
+    Integer[] UPLOAD = new Integer[]{920000, 929999};
 }
